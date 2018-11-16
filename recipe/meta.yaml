@@ -1,5 +1,5 @@
 {% set name = "flake8-rst" %}
-{% set version = "0.4.2" %}
+{% set version = "0.5.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4998e87fb3424e3851e6590d6807e353b19645a01f7ca92e711b373e58863e51
+  sha256: e3cc35dbacca52adcb297297b410211af6b2e0603750c55388cbb7efa64955fc
 
 build:
   number: 0
