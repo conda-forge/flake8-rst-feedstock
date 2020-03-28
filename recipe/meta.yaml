@@ -1,20 +1,20 @@
 {% set name = "flake8-rst" %}
-{% set version = "0.7.1" %}
+{% set version = "0.7.2" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f447520288a73bce2eb9ce09efdd10cebf381468200e7ee1b9ac7b6e0d30bd6f
+  sha256: 9d7c42ef63da78cde1dc16d712b9eb1e0d2e4374483f7cbf4e8bc975af4d9b3f
 
 build:
   number: 0
   noarch: python
   entry_points:
     - flake8-rst = flake8_rst.cli:main
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv '
 
 requirements:
   host:
