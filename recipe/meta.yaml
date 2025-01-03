@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 9d7c42ef63da78cde1dc16d712b9eb1e0d2e4374483f7cbf4e8bc975af4d9b3f
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - flake8-rst = flake8_rst.cli:main
@@ -20,12 +20,14 @@ requirements:
   host:
     - flake8 >=3.5.0
     - pip
-    - python
+    - python {{ python_min }}
   run:
     - flake8 >=3.5.0
-    - python
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - flake8_rst
   commands:
