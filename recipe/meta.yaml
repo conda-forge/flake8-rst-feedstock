@@ -18,11 +18,10 @@ build:
 
 requirements:
   host:
-    - flake8 >=3.5.0
     - pip
     - python {{ python_min }}
   run:
-    - flake8 >=3.5.0
+    - flake8 >=3.5.0,<=5
     - python >={{ python_min }}
 
 test:
